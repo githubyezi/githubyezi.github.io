@@ -11,7 +11,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/02/10/js基础/index.html">
 <meta property="og:site_name" content="叶子">
 <meta property="og:description" content="大家都知道正则表达式对象，是用来规范一个规范的表达式，它具有用来检查给出的字符串是否符合规则的属性和方法。js中的正则对象是RegExp，创建正则的语法是：var reg = new RegExp(pattern, attributes); 参数pattern是一个字符串，指定了正则表达式的内容，attributes是一个可选的字符串，包含属性 “g”、”i” 和’m’,分别用于指定全局匹配，区分">
-<meta property="og:updated_time" content="2017-02-10T16:02:52.842Z">
+<meta property="og:updated_time" content="2017-02-10T16:11:35.654Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="js之正则表达式(regular expression)">
 <meta name="twitter:description" content="大家都知道正则表达式对象，是用来规范一个规范的表达式，它具有用来检查给出的字符串是否符合规则的属性和方法。js中的正则对象是RegExp，创建正则的语法是：var reg = new RegExp(pattern, attributes); 参数pattern是一个字符串，指定了正则表达式的内容，attributes是一个可选的字符串，包含属性 “g”、”i” 和’m’,分别用于指定全局匹配，区分">
@@ -52,9 +52,9 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
@@ -133,11 +133,20 @@
 <li>如果要匹配字符串中所有符合要求的字符串，就要开启全局模式g<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">    <span class="keyword">var</span> result = <span class="literal">null</span>;</div><div class="line">    <span class="keyword">while</span>((result = reg.exec(string)) != <span class="literal">null</span>) &#123;</div><div class="line">    <span class="comment">//result 就是每一次循环找到的数组，一直到找不到为止</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </li>
 </ul>
-<h2 id="字符串替换"><a href="#字符串替换" class="headerlink" title="字符串替换"></a>字符串替换</h2>
+<h2 id="字符串替换-返回一个新的字符串"><a href="#字符串替换-返回一个新的字符串" class="headerlink" title="字符串替换(返回一个新的字符串)"></a>字符串替换(返回一个新的字符串)</h2><ul>
+<li>string.replace(reg,需要替换的字符串)</li>
+<li><p>在替换中使用组</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> string  = <span class="string">'2012-2-3'</span>;</div><div class="line"><span class="keyword">var</span> reg = <span class="regexp">/(\d+)\-(\d+)\-(\d+)/</span>;</div><div class="line"><span class="keyword">var</span> res = string.replace(reg, <span class="string">'$1年$2月$3日'</span>);</div><div class="line">结果是：<span class="number">2012</span>年<span class="number">2</span>月<span class="number">3</span>号</div></pre></td></tr></table></figure>
+</li>
+<li><p>替换的第二个参数可以是函数，函数的参数是匹配到的数组的散列</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> string  = <span class="string">'2012-2-3'</span>;</div><div class="line"><span class="keyword">var</span> reg = <span class="regexp">/(\d+)\-(\d+)\-(\d+)/</span>;</div><div class="line"><span class="keyword">var</span> res = string.replace(reg,<span class="function"><span class="keyword">function</span>(<span class="params">match, a, b, c</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> a + <span class="string">'年'</span> + b + <span class="string">'月'</span> + c + <span class="string">'日'</span>;</div><div class="line">&#125;);</div><div class="line">结果是：<span class="number">2012</span>年<span class="number">2</span>月<span class="number">3</span>号</div><div class="line">match是匹配到的整个字符串，a</div><div class="line">，b，c分别是匹配的子串，就是$<span class="number">1</span>,$<span class="number">2</span>,$<span class="number">3</span>,利用函数的返回值替换匹配结果</div></pre></td></tr></table></figure>
+</li>
+</ul>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/02/10/js基础/" data-id="ciyzxcqx50000b4usiu85773d" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/02/10/js基础/" data-id="ciyzxcqx50000b4usiu85773d" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -148,7 +157,7 @@
   
   
     <a href="/2017/02/04/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
+      <strong class="article-nav-caption">Ancien</strong>
       <div class="article-nav-title">叶子的博客</div>
     </a>
   
@@ -181,7 +190,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
+    <h3 class="widget-title">Articles récents</h3>
     <div class="widget">
       <ul>
         
@@ -206,7 +215,7 @@
   <div class="outer">
     <div id="footer-info" class="inner">
       &copy; 2017 叶子<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>
