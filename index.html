@@ -121,7 +121,8 @@
 <li>\ d digit 表示数字 0-9</li>
 <li>\D 非数字</li>
 <li>\r 回车</li>
-<li>\n 换行 回车换行通常一起使用<h3 id="特殊元字符"><a href="#特殊元字符" class="headerlink" title="特殊元字符"></a>特殊元字符</h3></li>
+<li>\n 换行 回车换行通常一起使用<h3 id="特殊元字符"><a href="#特殊元字符" class="headerlink" title="特殊元字符"></a>特殊元字符</h3>(?:) 表示只匹配不捕获，例如：<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> reg1 = <span class="regexp">/(\d)(\d\d\d)(\d)/</span>;</div><div class="line"><span class="keyword">var</span> string1 = <span class="string">'12345'</span>;</div><div class="line">reg1.exec(string1)</div><div class="line">结果是：[<span class="string">'12345'</span>,<span class="string">'1'</span>,<span class="string">'234'</span>,<span class="string">'5'</span>]</div><div class="line"></div><div class="line"><span class="keyword">var</span> reg2 = <span class="regexp">/(\d)(?:\d\d\d)(\d)/</span>;</div><div class="line"><span class="keyword">var</span> string2 = <span class="string">'12345'</span>;</div><div class="line">reg2.exec(string2)</div><div class="line">结果是：[<span class="string">'12345'</span>,<span class="string">'1'</span>,<span class="string">'5'</span>]</div></pre></td></tr></table></figure>
+</li>
 </ul>
 <h2 id="字符串提取"><a href="#字符串提取" class="headerlink" title="字符串提取"></a>字符串提取</h2><h2 id="字符串替换"><a href="#字符串替换" class="headerlink" title="字符串替换"></a>字符串替换</h2>
       
