@@ -128,7 +128,7 @@
 <ul>
 <li>上述表达式，如果匹配上了就返回一个数组，从第0项开始就是匹配到的结果，如果正则表达式中有分组，那么第n组就是数组中的第n项，得到的是一个真数组</li>
 <li>如果没有匹配到的话，就返回null</li>
-<li>如果要匹配字符串中所有符合要求的字符串，就要开启全局模式g<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div></pre></td></tr></table></figure>
+<li>如果要匹配字符串中所有符合要求的字符串，就要开启全局模式g<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">    <span class="keyword">var</span> result = <span class="literal">null</span>;</div><div class="line">    <span class="keyword">while</span>((result = reg.exec(string)) != <span class="literal">null</span>) &#123;</div><div class="line">    <span class="comment">//result 就是每一次循环找到的数组，一直到找不到为止</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </li>
 </ul>
 <h2 id="字符串替换"><a href="#字符串替换" class="headerlink" title="字符串替换"></a>字符串替换</h2>
