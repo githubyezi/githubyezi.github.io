@@ -11,7 +11,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/02/10/js基础/index.html">
 <meta property="og:site_name" content="叶子">
 <meta property="og:description" content="大家都知道正则表达式对象，是用来规范一个规范的表达式，它具有用来检查给出的字符串是否符合规则的属性和方法。js中的正则对象是RegExp，创建正则的语法是：var reg = new RegExp(pattern, attributes); 参数pattern是一个字符串，指定了正则表达式的内容，attributes是一个可选的字符串，包含属性 “g”、”i” 和’m’,分别用于指定全局匹配，区分">
-<meta property="og:updated_time" content="2017-02-10T15:37:25.414Z">
+<meta property="og:updated_time" content="2017-02-10T15:46:27.431Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="js之正则表达式(regular expression)">
 <meta name="twitter:description" content="大家都知道正则表达式对象，是用来规范一个规范的表达式，它具有用来检查给出的字符串是否符合规则的属性和方法。js中的正则对象是RegExp，创建正则的语法是：var reg = new RegExp(pattern, attributes); 参数pattern是一个字符串，指定了正则表达式的内容，attributes是一个可选的字符串，包含属性 “g”、”i” 和’m’,分别用于指定全局匹配，区分">
@@ -52,9 +52,9 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
@@ -96,14 +96,8 @@
 </ol>
 </li>
 <li>| 竖线 表示或者的意思，在正则中优先级最低<h3 id="限定元字符"><a href="#限定元字符" class="headerlink" title="限定元字符"></a>限定元字符</h3></li>
-<li><ul>
-<li>表示匹配一个或者多个字符  相当于{1,}</li>
-</ul>
-</li>
-<li><ul>
-<li>表示匹配0个或者多个字符   相当于{0,}</li>
-</ul>
-</li>
+<li>+ 表示匹配一个或者多个字符  相当于{1,}</li>
+<li>* 表示匹配0个或者多个字符   相当于{0,}</li>
 <li>? 表示匹配0个或者1个字符 </li>
 <li>{n} 表示匹配n个字符</li>
 <li>{n，} 表示匹配至少n个字符</li>
@@ -112,13 +106,30 @@
 </ul>
 <ol>
 <li>[abc]用来匹配一个字符，可以是a或者b或者c</li>
-<li>[^abc]用来匹配一个字符，不能是a、b、c<h3 id="简写元字符"><a href="#简写元字符" class="headerlink" title="简写元字符"></a>简写元字符</h3><h3 id="特殊元字符"><a href="#特殊元字符" class="headerlink" title="特殊元字符"></a>特殊元字符</h3></li>
+<li>[^abc]用来匹配一个字符，不能是a、b、c</li>
 </ol>
+<ul>
+<li>$ </li>
+</ul>
+<ol>
+<li>匹配必须以xxx结尾的字符串</li>
+<li>表示组引用 例如：正则表达式是 a(b)c的话，匹配到的结果包括匹配到小括号中正则的子结果，此时，可以用$1表示比配到的第一个子组。<h3 id="简写元字符"><a href="#简写元字符" class="headerlink" title="简写元字符"></a>简写元字符</h3></li>
+</ol>
+<ul>
+<li>\w word的意思，包括a-z, A-Z,0-9和下划线</li>
+<li>\W 非word 与\w相反</li>
+<li>\s space 表示空白</li>
+<li>\S 匹配非空白</li>
+<li>\ d digit 表示数字 0-9</li>
+<li>\D 非数字</li>
+<li>\r 回车</li>
+<li>\n 换行 回车换行通常一起使用<h3 id="特殊元字符"><a href="#特殊元字符" class="headerlink" title="特殊元字符"></a>特殊元字符</h3></li>
+</ul>
 <h2 id="字符串提取"><a href="#字符串提取" class="headerlink" title="字符串提取"></a>字符串提取</h2><h2 id="字符串替换"><a href="#字符串替换" class="headerlink" title="字符串替换"></a>字符串替换</h2>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/02/10/js基础/" data-id="ciyzxcqx50000b4usiu85773d" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2017/02/10/js基础/" data-id="ciyzxcqx50000b4usiu85773d" class="article-share-link">Share</a>
       
       
     </footer>
@@ -129,7 +140,7 @@
   
   
     <a href="/2017/02/04/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Ancien</strong>
+      <strong class="article-nav-caption">Older</strong>
       <div class="article-nav-title">叶子的博客</div>
     </a>
   
@@ -162,7 +173,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Articles récents</h3>
+    <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
         
@@ -187,7 +198,7 @@
   <div class="outer">
     <div id="footer-info" class="inner">
       &copy; 2017 叶子<br>
-      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>
